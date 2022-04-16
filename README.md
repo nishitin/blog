@@ -1,6 +1,6 @@
 # Blog
 ## Technology
-###　Next.js
+### Next.js
 ### TypeScript
 ### microCMS
 ### Vercel
