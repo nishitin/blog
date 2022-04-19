@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "start:stg": "dotenv -e .env.staging next",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "dotenv": "^16.0.0",
     "microcms-js-sdk": "^2.0.0",
+    "dotenv-cli": "^4.0.0",
     "next": "12.1.5",
     "react": "18.0.0",
     "react-dom": "18.0.0"
