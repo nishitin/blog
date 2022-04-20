@@ -18,11 +18,24 @@ export const getStaticProps = async () => {
 function Home({ blogs }: Props) {
   return (
     <div>
-      <li>
-        {blogs?.map((blog) => {
-          return <div key={blog.id}>{blog.title}</div>
-        })}
-      </li>
+      <header className="bg-blue-400">
+        <div>
+          <a className="text-white">MuscleDeveloperへの道</a>
+        </div>
+        <h1 className="text-white ml-10">MuscleDev</h1>
+        <nav className="flex justify-end mr-10">
+          <ul className="flex">
+            <li className="text-white ml-4">Frontend</li>
+            <li className="text-white ml-4">Backend</li>
+            <li className="text-white ml-4">Training</li>
+            <li className="text-white ml-4">Book</li>
+            <li className="text-white ml-4">Profile</li>
+          </ul>
+        </nav>
+      </header>
+      {blogs?.map((blog) => {
+        return <div key={blog.id}>{blog.title}</div>
+      })}
     </div>
   )
 }
