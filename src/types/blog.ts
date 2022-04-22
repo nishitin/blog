@@ -3,4 +3,5 @@ export type Blog = {
   body: string
   title: string
   contents: string
+  createdAt: string
 }
