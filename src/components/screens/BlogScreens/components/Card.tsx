@@ -7,7 +7,7 @@ type Props = {
 export const Card = ({ blogs }: Props) => {
   return (
     <article className="w-3/5 mt-2">
-      {blogs.map((blog, i) => {
+      {blogs.map((blog) => {
         return (
           <div key={blog.id} className="flex w-full ml-2 mt-4">
             <div className="h-32 lg:w-32 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden bg-black"></div>
