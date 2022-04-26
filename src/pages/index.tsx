@@ -1,5 +1,6 @@
+import { GetStaticProps } from 'next'
 import { Header } from '~/src/components/base/Header'
-import { BlogScreens } from '../components/screens/BlogScreens'
+import { BlogListScreens } from '~/src/components/screens/BlogListScreens'
 import { client } from '~/src/lib/client'
 import { Blog } from '~/src/types/blog'
 import { Footer } from '../components/base/Footer'
@@ -8,7 +9,7 @@ type Props = {
   blogs: Blog[]
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const blog = await client.get({ endpoint: 'blog' })
 
   return {
@@ -22,7 +23,7 @@ function Home({ blogs }: Props) {
   return (
     <div>
       <Header />
-      <BlogScreens blogs={blogs} />
+      <BlogListScreens blogs={blogs} />
       <Footer />
     </div>
   )
