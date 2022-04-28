@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Blog } from '~/src/types/blog'
 
 type Props = {
@@ -24,7 +25,9 @@ export const Card = ({ blogs }: Props) => {
                     )
                   })}
                 </div>
-                <div className="text-gray-900 font-bold text-xl my-2 break-words">{blog.title}</div>
+                <Link href={`/blog/${blog.id}`}>
+                  <a className="text-gray-900 font-bold text-xl my-2 break-words">{blog.title}</a>
+                </Link>
                 <p className="text-gray-700 text-base"></p>
               </div>
               <div className="flex items-center">
