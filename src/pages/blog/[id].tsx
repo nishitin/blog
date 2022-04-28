@@ -1,5 +1,6 @@
 import { GetStaticPaths } from 'next'
 import { Header } from '~/src/components/base/Header'
+import { BlogDetailScreen } from '~/src/components/screens/BlogDetailScreens'
 import { client } from '~/src/lib/client'
 import { Blog } from '~/src/types/blog'
 
@@ -31,7 +32,7 @@ export default function BlogId({ blog }: blogs) {
   return (
     <div>
       <Header />
-      <h1>{blog.title}</h1>
+      <BlogDetailScreen blog={blog} />
     </div>
   )
 }
