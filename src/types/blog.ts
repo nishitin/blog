@@ -2,7 +2,7 @@ export type Blog = {
   id: string
   body: string
   title: string
-  contents: string
+  content: string
   category: Category[]
   createdAt: string
 }
