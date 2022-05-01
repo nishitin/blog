@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export const Header = () => {
@@ -7,7 +8,9 @@ export const Header = () => {
         <p className="text-white">筋トレ大好きエンジニア</p>
       </div>
       <div className="flex w-full">
-        <h1 className="text-white text-2xl font-mono ml-20 mt-2">nishitinBlog</h1>
+        <Link href="/">
+          <a className="text-white text-2xl font-mono ml-20 mt-2">nishitinBlog</a>
+        </Link>
         <nav className="w-full flex justify-end">
           <ul className="flex mt-2 mr-20">
             <li className="text-white ml-2 cursor-pointer">Training</li>
