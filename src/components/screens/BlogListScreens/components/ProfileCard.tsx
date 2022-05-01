@@ -2,7 +2,7 @@ import React from 'react'
 
 export const ProfileCard = () => {
   return (
-    <aside className="w-1/5 border-solid border-2 border-gray-400 p-8 ml-20">
+    <aside className="border-solid border-2 border-gray-400 p-8">
       <div>
         <div>
           <div className="bg-black"></div>
