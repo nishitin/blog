@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React, { memo } from 'react'
 import { Category } from '~/src/types/category'
 
@@ -12,9 +13,9 @@ export const CategoryCard = memo(({ category }: Props) => {
         <span className="w-full bg-gray-400 px-2 py-0.5 rounded-md flex mb-2">カテゴリー</span>
         {category.map((c) => {
           return (
-            <p key={c.id} className="border-b px-2 border-gray-300 mb-2 cursor-pointer ">
-              {c.name}
-            </p>
+            <Link key={c.id} href={`/category/${c.id}`}>
+              <a className="border-b px-2 border-gray-300 mb-2 cursor-pointer flex">{c.name}</a>
+            </Link>
           )
         })}
       </div>
