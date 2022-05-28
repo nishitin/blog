@@ -11,6 +11,10 @@
   },
   "dependencies": {
     "microcms-js-sdk": "^2.0.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "dotenv-cli": "^4.0.0",
     "next": "12.1.5",
     "react": "18.0.0",
