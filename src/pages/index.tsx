@@ -1,11 +1,12 @@
 import { GetStaticProps } from 'next'
-import { Header } from '~/src/components/base/Header'
-import { BlogListScreens } from '~/src/components/screens/BlogListScreens'
 import { client } from '~/src/lib/client'
 import { Blog } from '~/src/types/blog'
-import { Footer } from '../components/base/Footer'
 import { Pagination } from '~/src/components/base/Pagination'
 import { Category } from '../types/category'
+import { Layout } from '~/src/components/base/Layout'
+import { Card } from '~/src/components/base/Card'
+import { ProfileCard } from '~/src/components/base/ProfileCard'
+import { CategoryCard } from '~/src/components/base/CategoryCard'
 
 type Props = {
   blog: Blog[]
@@ -28,14 +29,16 @@ export const getStaticProps: GetStaticProps = async () => {
 
 function Home({ blog, category, totalCount }: Props) {
   return (
-    <div>
-      <Header />
-      <BlogListScreens blogs={blog} category={category} />
-      <div className="mb-20">
+    <Layout>
+      <article className="w-3/5 mt-2">
+        <Card blogs={blog} />
         <Pagination totalCount={totalCount} />
+      </article>
+      <div className="w-1/5 ml-20 mt-5">
+        <ProfileCard />
+        <CategoryCard category={category} />
       </div>
-      <Footer />
-    </div>
+    </Layout>
   )
 }
 
