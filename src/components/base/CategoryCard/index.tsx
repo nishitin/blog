@@ -8,7 +8,7 @@ type Props = {
 
 export const CategoryCard = memo(({ category }: Props) => {
   return (
-    <div className="border-solid border-2 border-gray-400 p-8">
+    <div className="border-solid border-2 border-gray-400 p-8 mt-2">
       <div>
         <span className="w-full bg-gray-400 px-2 py-0.5 rounded-md flex mb-2">カテゴリー</span>
         {category.map((c) => {

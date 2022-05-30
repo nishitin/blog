@@ -19,7 +19,7 @@ export const Pagination = memo(({ totalCount }: Props) => {
   const range = (start: number, end: number) => [...Array(end - start + 1)].map((_, i) => start + i)
 
   return (
-    <div className="mt-10">
+    <div className="mt-10 justify-end">
       <ul className="flex justify-center">
         {currentPage !== 1 && (
           <li className="mr-2">
