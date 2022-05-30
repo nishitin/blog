@@ -1,6 +1,6 @@
-import React from 'react'
+import { memo } from 'react'
 
-export const ProfileCard = () => {
+export const ProfileCard = memo(() => {
   return (
     <aside className="border-solid border-2 border-gray-400 p-8">
       <div>
@@ -20,4 +20,6 @@ export const ProfileCard = () => {
       </div>
     </aside>
   )
-}
+})
+
+ProfileCard.displayName = 'ProfileCard'

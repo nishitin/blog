@@ -1,17 +1,19 @@
 import Link from 'next/link'
+import React from 'react'
+import { memo } from 'react'
 import { Blog } from '~/src/types/blog'
 
 type Props = {
   blogs: Blog[]
 }
 
-export const Card = ({ blogs }: Props) => {
+export const Card = memo(({ blogs }: Props) => {
   if (blogs.length === 0) {
     return <h1 className="w-3/5">データがありません</h1>
   }
 
   return (
-    <article className="w-3/5 mt-2">
+    <>
       {blogs?.map((blog) => {
         return (
           <div key={blog.id} className="flex w-full ml-2 mt-4">
@@ -37,6 +39,8 @@ export const Card = ({ blogs }: Props) => {
           </div>
         )
       })}
-    </article>
+    </>
   )
-}
+})
+
+Card.displayName = 'Card'

@@ -1,11 +1,11 @@
-import React from 'react'
+import { memo } from 'react'
 import { Blog } from '~/src/types/blog'
 
 type Props = {
   blog: Blog
 }
 
-export const BlogDetailScreen = ({ blog }: Props) => {
+export const Body = memo(({ blog }: Props) => {
   return (
     <div>
       <div key={blog.id}>
@@ -19,4 +19,6 @@ export const BlogDetailScreen = ({ blog }: Props) => {
       <h1></h1>
     </div>
   )
-}
+})
+
+Body.displayName = 'Body'
