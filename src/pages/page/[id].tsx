@@ -1,7 +1,8 @@
-import { Footer } from '~/src/components/base/Footer'
-import { Header } from '~/src/components/base/Header'
+import { Card } from '~/src/components/base/Card'
+import { CategoryCard } from '~/src/components/base/CategoryCard'
+import { Layout } from '~/src/components/base/Layout'
 import { Pagination } from '~/src/components/base/Pagination'
-import { BlogListScreens } from '~/src/components/screens/BlogListScreens'
+import { ProfileCard } from '~/src/components/base/ProfileCard'
 import { client } from '~/src/lib/client'
 import { Blog } from '~/src/types/blog'
 import { Category } from '~/src/types/category'
@@ -45,13 +46,15 @@ export const getStaticProps = async (context: any) => {
 
 export default function Page({ blog, category, totalCount }: Props) {
   return (
-    <div>
-      <Header />
-      <BlogListScreens blogs={blog} category={category} />
-      <div className="mb-20">
+    <Layout>
+      <article className="w-3/5 mt-2">
+        <Card blogs={blog} />
         <Pagination totalCount={totalCount} />
+      </article>
+      <div className="w-1/5 ml-20 mt-5">
+        <ProfileCard />
+        <CategoryCard category={category} />
       </div>
-      <Footer />
-    </div>
+    </Layout>
   )
 }
