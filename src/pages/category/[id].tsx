@@ -40,7 +40,7 @@ export const getStaticProps = async (context: any) => {
 export default function CategoryPage({ blog, category, totalCount }: Props) {
   return (
     <Layout>
-      <article className="w-3/5 mt-2">
+      <article className="w-4/5 mt-2">
         <Card blogs={blog} />
         <Pagination totalCount={totalCount} />
       </article>
