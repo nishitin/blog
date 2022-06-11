@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { memo } from 'react'
+import { UseDateFormat } from '~/src/hooks/Format'
 import { Blog } from '~/src/types/blog'
 
 type Props = {
@@ -11,6 +12,10 @@ export const Card = memo(({ blogs }: Props) => {
   if (blogs.length === 0) {
     return <h1 className="w-3/5">データがありません</h1>
   }
+  const data = blogs.map((b) => {
+    return b.createdAt as string
+  })
+  const { dateFormat } = UseDateFormat(data.toString())
 
   return (
     <>
@@ -32,7 +37,7 @@ export const Card = memo(({ blogs }: Props) => {
               </div>
               <div className="flex items-center">
                 <div className="text-sm">
-                  <p className="text-gray-600">記事作成日: {blog.createdAt}</p>
+                  <p className="text-gray-600">記事作成日: {dateFormat}</p>
                 </div>
               </div>
             </div>
