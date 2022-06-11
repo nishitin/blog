@@ -30,11 +30,11 @@ export const getStaticProps: GetStaticProps = async () => {
 function Home({ blog, category, totalCount }: Props) {
   return (
     <Layout>
-      <article className="w-3/5 mt-2">
+      <article className="w-4/5 mt-2">
         <Card blogs={blog} />
         <Pagination totalCount={totalCount} />
       </article>
-      <div className="w-1/5 ml-20 mt-5">
+      <div className="w-1/5  mt-5">
         <ProfileCard />
         <CategoryCard category={category} />
       </div>

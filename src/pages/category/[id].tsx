@@ -44,7 +44,7 @@ export default function CategoryPage({ blog, category, totalCount }: Props) {
         <Card blogs={blog} />
         <Pagination totalCount={totalCount} />
       </article>
-      <div className="w-1/5 ml-20 mt-5">
+      <div className="w-1/5 mt-5">
         <ProfileCard />
         <CategoryCard category={category} />
       </div>

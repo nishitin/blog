@@ -3,6 +3,7 @@ import { Body } from '~/src/components/base/Body'
 import { CategoryCard } from '~/src/components/base/CategoryCard'
 import { Layout } from '~/src/components/base/Layout'
 import { ProfileCard } from '~/src/components/base/ProfileCard'
+import { TableOfContents } from '~/src/components/base/TableOfContents'
 import { client } from '~/src/lib/client'
 import { Blog } from '~/src/types/blog'
 import { Category } from '~/src/types/category'
@@ -37,13 +38,14 @@ export const getStaticProps = async (context: any) => {
 export default function BlogId({ blog, category }: blogs) {
   return (
     <Layout>
-      <article className="w-3/5 mt-2">
+      <main className="w-4/5 mt-2">
         <Body blog={blog} />
-      </article>
-      <div className="w-1/5 ml-20 mt-5">
+      </main>
+      <aside className="w-1/5 mt-5">
         <ProfileCard />
         <CategoryCard category={category} />
-      </div>
+        <TableOfContents blog={blog} />
+      </aside>
     </Layout>
   )
 }
