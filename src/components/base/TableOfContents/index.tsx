@@ -13,8 +13,13 @@ export const TableOfContents = memo(({ blog, mode }: Props) => {
   }
 
   const tocStyle = {
-    ASIDE: 'border-solid ',
-    BODY: 'w-9/12 bg-gray-200 mb-10',
+    ASIDE: 'border-solid',
+    BODY: 'w-9/12 bg-gray-200 mb-10 border-solid',
+  }
+
+  const tocTextStyle = {
+    ASIDE: 'flex justify-center',
+    BODY: 'flex',
   }
 
   const $ = cheerio.load(blog.body)
@@ -29,19 +34,19 @@ export const TableOfContents = memo(({ blog, mode }: Props) => {
     <div className={`${tocStyle[mode]}`}>
       {mode === 'BODY' ? <div className="h-2 bg-blue-400"></div> : ''}
       <p className="flex justify-center font-bold">目次</p>
-      {toc.map((t: any) => {
-        return (
-          <div key={t.id}>
-            <ul className="flex justify-center">
-              <li>
-                <a className={t.name === 'h1' ? 'text-3xl' : t.name === 'h2' ? 'text-xl' : 'text-xs'}>
-                  ・{t.text}
+      <div className="p-2">
+        {toc.map((t: any) => {
+          return (
+            <ul className={`${tocTextStyle[mode]}`} key={t.id}>
+              <li className="font-medium">
+                <a className={t.name === 'h1' ? 'text-2xl' : t.name === 'h2' ? 'text-xl' : 'text-base'}>
+                  {t.text}
                 </a>
               </li>
             </ul>
-          </div>
-        )
-      })}
+          )
+        })}
+      </div>
     </div>
   )
 })

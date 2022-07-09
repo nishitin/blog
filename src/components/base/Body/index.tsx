@@ -37,9 +37,9 @@ export const Body = memo(({ blog }: Props) => {
           </a>
         </Link>
       </div>
-      <div>投稿日:{dateFormat}</div>
+      <div className="mb-4">投稿日:{dateFormat}</div>
       <div>
-        <h1 className="text-4xl flex justify-center">{blog.title}</h1>
+        <h1 className="text-4xl flex">{blog.title}</h1>
       </div>
       <TableOfContents blog={blog} mode="BODY" />
       <div dangerouslySetInnerHTML={{ __html: blog.body }} />
