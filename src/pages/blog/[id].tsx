@@ -38,13 +38,13 @@ export const getStaticProps = async (context: any) => {
 export default function BlogId({ blog, category }: blogs) {
   return (
     <Layout>
-      <main className="w-4/5 mt-2">
+      <main className="w-9/12 mt-2">
         <Body blog={blog} />
       </main>
       <aside className="w-1/5 mt-5">
         <ProfileCard />
         <CategoryCard category={category} />
-        <TableOfContents blog={blog} />
+        <TableOfContents blog={blog} mode="ASIDE" />
       </aside>
     </Layout>
   )

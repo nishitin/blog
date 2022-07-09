@@ -21,7 +21,7 @@ export const Card = memo(({ blogs }: Props) => {
     <>
       {blogs?.map((blog) => {
         return (
-          <div key={blog.id} className="flex w-full ml-2 mt-4">
+          <div key={blog.id} className="flex w-11/12 mt-4">
             <div className="h-32 lg:w-32 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden bg-black"></div>
             <div className="h-32 w-full border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-2.5 flex flex-col justify-between leading-normal">
               <div className="w-max">
