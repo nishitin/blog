@@ -15,9 +15,9 @@ export const Order = ({ blog }: Props) => {
         </Link>
       </li>
       <li className="mr-2">
-        <Link href={`/category/${blog.category.name.toLowerCase()}`}>
+        <Link href={`/category/${blog.category[0].name.toLowerCase()}`}>
           {/* TODO: この場合この場合カテゴリーがたくさん含まれているとダメになるから修正 */}
-          <a>{blog.category.name} ＞</a>
+          <a className="text-blue-500">{blog.category[0].name} ＞</a>
         </Link>
       </li>
       <li>

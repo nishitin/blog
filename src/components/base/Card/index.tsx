@@ -26,9 +26,15 @@ export const Card = memo(({ blogs }: Props) => {
             <div className="h-32 w-full border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-2.5 flex flex-col justify-between leading-normal">
               <div className="w-max">
                 <div className="flex">
-                  <p className="text-sm text-white items-center mr-4 bg-gray-400 px-2 py-0.5 rounded-md cursor-pointer hover:bg-gray-500">
-                    {blog.category.name}
-                  </p>
+                  {blog.category.map((c) => {
+                    return (
+                      <Link key={c.id} href={`/category/${c.id}`}>
+                        <a className="text-sm text-white items-center mr-2 bg-gray-400 px-2 py-0.5 rounded-md cursor-pointer hover:bg-gray-500">
+                          {c.name}
+                        </a>
+                      </Link>
+                    )
+                  })}
                 </div>
                 <Link href={`/blog/${blog.id}`}>
                   <a className="text-gray-900 font-bold text-xl my-2 break-words">{blog.title}</a>

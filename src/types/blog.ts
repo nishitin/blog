@@ -3,7 +3,7 @@ export type Blog = {
   body: string
   title: string
   content: string
-  category: Category
+  category: Category[]
   createdAt: string
 }
 

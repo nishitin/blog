@@ -10,10 +10,8 @@ export const ProfileCard = memo(() => {
         <h2 className="flex justify-center">nishitin</h2>
         <p className="flex justify-center">筋トレ大好きエンジニア</p>
         <div className="mt-2">
-          <p className="mb-2 text-xs">◇このブログについて</p>
-          <p>筋トレ大好きエンジニアのブログ</p>
-          <p>◇BIG3の重量</p>
-          <p>ベンチ 105kg デットリフト 170kg スクワット 150kg</p>
+          <p className="text-xs">◇このブログについて</p>
+          <p className="text-xs mb-2">筋トレ大好きエンジニアのブログ</p>
         </div>
       </div>
     </div>
