@@ -31,7 +31,14 @@ export const Pagination = memo(({ totalCount }: Props) => {
         {range(1, lastPage).map((n, i) => (
           <li key={i} className="mr-2">
             <Link href={`/page/${n}`}>
-              <a>{n}</a>
+              <a
+                className={
+                  n === currentPage
+                    ? 'p-3 border-solid rounded-lg border bg-blue-400 border-gray-400 text-white'
+                    : 'p-3 border-solid rounded-lg border border-gray-400 hover:bg-gray-400 cursor-pointer'
+                }>
+                {n}
+              </a>
             </Link>
           </li>
         ))}
