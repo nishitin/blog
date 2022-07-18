@@ -1,6 +1,8 @@
-export const Footer = () => {
+import { memo } from 'react'
+
+export const Footer = memo(() => {
   return (
-    <footer className="w-full h-11 bottom-0 absolute bg-gray-400">
+    <footer className="w-full h-11 bottom-0 fixed bg-gray-400">
       <div className="h-full">
         <p className="h-full flex justify-center align-middle items-center text-white text-xs">
           ©︎ 2022 nishitinBlog
@@ -8,4 +10,6 @@ export const Footer = () => {
       </div>
     </footer>
   )
-}
+})
+
+Footer.displayName = 'Footer'
